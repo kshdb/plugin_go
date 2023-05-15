@@ -1,8 +1,10 @@
 package plugin_go
 
 import (
+	"encoding/json"
 	"fmt"
 	"math/rand"
+	"net/url"
 	"strings"
 )
 
@@ -45,4 +47,26 @@ func randstr(n int) string {
 	}
 
 	return string(b)
+}
+
+// 解析url参数
+func GetUrlParams(_url string) (_json any) {
+	//解析URL
+	parsedURL, _ := url.Parse(_url)
+
+	// 获取URL参数
+	params, _ := url.ParseQuery(parsedURL.RawQuery)
+
+	// 将参数转换为JSON对象
+	jsonObj := make(map[string]interface{})
+	for key, values := range params {
+		if len(values) > 0 {
+			jsonObj[key] = values[0]
+		}
+	}
+	// 将JSON对象序列化为字符串
+	jsonBytes, _ := json.Marshal(jsonObj)
+	//转换为json对象
+	json.Unmarshal(jsonBytes, &_json)
+	return
 }
