@@ -81,15 +81,40 @@ type FormFile struct {
 插件对象
 */
 type DataPlugin struct {
-	Path    string        `json:"path"`
+	//插件id
+	ID int `json:"id"`
+	//插件名称
+	PluginName string `json:"plugin_name"`
+	//插件logo
+	PluginLogo string `json:"plugin_logo"`
+	//插件路径
+	PluginPath string `json:"plugin_path"`
+	//插件描述
+	PluginDescribe string `json:"plugin_describe"`
+	//插件接口列表
 	APIList []DataAPIList `json:"api_list"`
+	//插件状态 -1卸载,0安装,1启用
+	PluginStatus int `json:"plugin_status"`
+	//插件创建日期
+	CreateTime string `json:"create_time"`
 }
 
 /*
-插件接口列表
+插件接口对象
 */
 type DataAPIList struct {
+	//接口id
+	ID int `json:"id"`
+	//接口名称
+	ApiName string `json:"api_name"`
+	//接口描述
+	ApiDescribe string `json:"api_describe"`
+	//函数名称
 	FuncName string `json:"func_name"`
-	URL      string `json:"url"`
-	Method   string `json:"method"`
+	//接口路由
+	URL string `json:"url"`
+	//接口请求方式
+	Method string `json:"method"`
+	//接口创建日期
+	CreateTime string `json:"create_time"`
 }
