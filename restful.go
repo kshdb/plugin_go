@@ -75,3 +75,21 @@ type FormFile struct {
 	//文件后缀名
 	FileSuffix string `json:"file_suffix"`
 }
+
+/*------插件对象存储数据模型-----*/
+/*
+插件对象
+*/
+type DataPlugin struct {
+	Path    string        `json:"path"`
+	APIList []DataAPIList `json:"api_list"`
+}
+
+/*
+插件接口列表
+*/
+type DataAPIList struct {
+	FuncName string `json:"func_name"`
+	URL      string `json:"url"`
+	Method   string `json:"method"`
+}
