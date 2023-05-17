@@ -127,6 +127,6 @@ type RwJson struct {
 	Code int `json:"code"`
 	//状态信息
 	Msg string `json:"msg"`
-	//返回数据
+	//返回数据对象
 	Data any `json:"data,omitempty"`
 }
