@@ -118,3 +118,15 @@ type DataAPIList struct {
 	//接口创建日期
 	CreateTime string `json:"create_time"`
 }
+
+/*
+插件返回对象
+*/
+type RwJson struct {
+	//状态码
+	Code int `json:"code"`
+	//状态信息
+	Msg string `json:"msg"`
+	//返回数据
+	Data any `json:"data,omitempty"`
+}
