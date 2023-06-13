@@ -378,11 +378,11 @@ func (p *Plugin) run() {
 	}
 
 	params := []string{
-		"-pingo:prefix=" + string(p.meta),
-		"-pingo:proto=" + p.proto,
+		"-plugin_go:prefix=" + string(p.meta),
+		"-plugin_go:proto=" + p.proto,
 	}
 	if p.proto == "unix" && p.unixdir != "" {
-		params = append(params, "-pingo:unixdir="+p.unixdir)
+		params = append(params, "-plugin_go:unixdir="+p.unixdir)
 	}
 	for i := 0; i < len(p.params); i++ {
 		params = append(params, p.params[i])

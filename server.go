@@ -53,9 +53,9 @@ type config struct {
 
 func makeConfig() *config {
 	c := &config{}
-	flag.StringVar(&c.proto, "pingo:proto", "unix", "Protocol to use: unix or tcp")
-	flag.StringVar(&c.unixdir, "pingo:unixdir", "", "Alternative directory for unix socket")
-	flag.StringVar(&c.prefix, "pingo:prefix", "pingo", "Prefix to output lines")
+	flag.StringVar(&c.proto, "plugin_go:proto", "unix", "Protocol to use: unix or tcp")
+	flag.StringVar(&c.unixdir, "plugin_go:unixdir", "", "Alternative directory for unix socket")
+	flag.StringVar(&c.prefix, "plugin_go:prefix", "plugin_go", "Prefix to output lines")
 	return c
 }
 
